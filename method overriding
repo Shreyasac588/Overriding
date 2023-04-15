@@ -1,0 +1,51 @@
+package overriding;
+import java.util.Scanner;
+public class Flipcart {
+	public void login() {
+		System.out.println("login credentials");
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the email");
+		String email=s.next();
+		System.out.println("enter the passward");
+		String passward=s.next();
+	}
+}
+class Customer extends Flipcart{
+	@Override
+	public void login() {
+		super.login();
+		System.out.println("OVERRIDING CUSTOMER DETAIL");
+		System.out.println("login credentials");
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the email");
+		String email=s.next();
+		System.out.println("enter the passward");
+		String passward=s.next();
+		System.out.println("i am not a robot");
+		String human=s.next();
+	}
+	
+}
+class Employee extends Flipcart{
+	@Override
+	public void login() {
+		super.login();
+		System.out.println("OVERRIDING EMPLOYEE DETAIL");
+		System.out.println("login credentials");
+		Scanner s=new Scanner(System.in);
+		System.out.println("enter the employee id");
+		String emplid=s.next();
+		System.out.println("enter the passward");
+		String passward=s.next();
+	}
+}
+class Main{
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Customer c=new Customer();
+		c.login();
+		Employee e=new Employee();
+		e.login();
+	}
+}
+
